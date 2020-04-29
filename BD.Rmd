@@ -27,9 +27,3 @@ Gasto en investigación y desarrollo (% del PIB)
 .
 ```
 En el archivo: Metadata_Indicator_API_CHL_DS2_es_csv_v2_1006027.csv se encuentran todas las areas que existe informacion historica, su descripcion y el tipo de medida utilizada.
-
-## Preguntas
-Crecimiento del PIB por gobierno?
-Crecimiento del desarrollo Tecnologico por decada?
-
-AL tener muchas variables esta BD pueden realizarse muchas preguntas acerca de la misma 
