@@ -13,6 +13,81 @@ Esta base de datos fue obtenida de las estadisticas historicas (1960 a 2018) que
 
 En el archivo *API_Download_DS2_es_csv_v2_1035831.csv* se encuentra valores separados por comas, que nos permitiran realizar estudios estadisticos acerca de distintas areas de los paises OCDE, en ambitos de desarrollo economico y social, abarcando temas como salud, tecnología, comercio, etc.
 
+PAÍS | AÑO DE ADHESIÓN
+-----------------------
+ALEMANIA | 1961
+AUSTRALIA | 1971
+AUSTRIA | 1961
+BÉLGICA | 1961
+CANADÁ | 1961
+CHILE | 2010
+
+COLOMBIA | 2020
+
+COREA | 1996
+
+DINAMARCA | 1961
+
+ESLOVENIA | 2010
+
+ESPAÑA | 1961
+
+ESTADOS UNIDOS | 1961
+
+ESTONIA | 2010
+
+FINLANDIA | 1969
+
+FRANCIA | 1961
+
+GRECIA | 1961
+
+HUNGRÍA | 1996
+
+IRLANDA | 1961
+
+ISLANDIA | 1961
+
+ISRAEL | 2010
+
+ITALIA | 1962
+
+JAPÓN | 1964
+
+LETONIA | 2016
+
+LITUANIA | 2018
+
+LUXEMBURGO | 1961
+
+MÉXICO | 1994
+
+NORUEGA | 1961
+
+NUEVA ZELANDA | 1973
+
+PAÍSES BAJOS | 1961
+
+POLONIA | 1996
+
+PORTUGAL | 1961
+
+REINO UNIDO | 1961
+
+REPÚBLICA CHECA | 1995
+
+REPÚBLICA ESLOVACA | 2000
+
+SUECIA | 1961
+
+SUIZA | 1961
+
+TURQUÍA | 1961
+
+
+
+
+
 Algunos de los campos conn los que cuenta la BD son los sigueintes:
 
 ```
