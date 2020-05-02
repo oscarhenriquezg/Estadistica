@@ -7,12 +7,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ## Sobre la Base de Datos
 
-Esta base de datos fue obtenida de las estadisticas historicas (1960 a 2018) que guarda el banco mundial sobre Chile desde la sigueinte URL: <https://datos.bancomundial.org/pais/chile>.
+Esta base de datos fue obtenida de las estadisticas historicas (1960 a 2018) que guarda el banco mundial sobre los paises de la OCDE, incluido Chile desde la sigueinte URL: <https://datos.bancomundial.org/?locations=CL-DE-AU-AT-BE-CO-CA-KR-DK-SI-ES-US-EE-FI-FR-GR-HU-IE-IS-IL-IT-JP-LV-LT-LU-MX-NO-NZ-NL-PL-PT-GB-CZ-SK-SE-CH-TR>.
 
-En el archivo API_CHL_DS2_es_csv_v2_1006027.csv se encuentra valores separados por comas, que nos permitiran realizar estudios estadisticos acerca de distintas areas del pais, en ambitos de desarrollo economico y social, abarcando temas como salud, tecnología, comercio, etc.
+En el archivo *API_Download_DS2_es_csv_v2_1035831.csv* se encuentra valores separados por comas, que nos permitiran realizar estudios estadisticos acerca de distintas areas de los paises OCDE, en ambitos de desarrollo economico y social, abarcando temas como salud, tecnología, comercio, etc.
 
 Algunos de los campos conn los que cuenta la BD son los sigueintes:
 
@@ -26,10 +25,11 @@ Gasto en investigación y desarrollo (% del PIB)
 .
 .
 ```
-En el archivo: Metadata_Indicator_API_CHL_DS2_es_csv_v2_1006027.csv se encuentran todas las areas que existe informacion historica, su descripcion y el tipo de medida utilizada.
+En el archivo: Metadata_Indicator_API_Download_DS2_es_csv_v2_1035831.csv se encuentran todas las areas que existe informacion historica, su descripcion y el tipo de medida utilizada.
 
 ## Preguntas
-Crecimiento del PIB por gobierno?
-Crecimiento del desarrollo Tecnologico por decada?
+* ¿Cual es la evolucion del PIB de los paises OCDE con respecto a Chile?
+* ¿Cual es la inversion en I+D de los paises OCDE con respecto a Chile?
+* ¿Cual es el crecimiento del desarrollo Tecnologico de los paises OCDE con respecto a Chile?
 
 AL tener muchas variables esta BD pueden realizarse muchas preguntas acerca de la misma 
