@@ -1,0 +1,215 @@
+---
+title: "Análisis Estadístico de Sismos en Chile"
+subtitle: "entre los años  2003 y 2015"
+author: "Oscar Henríquez"
+date: "10/06/2020"
+output: 
+  pdf_document:
+    highlight: tango
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+# Setup
+knitr::opts_knit$set(root.dir = "/Users/oscarhenriquezg/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica")
+
+# Librerías
+library(agricolae)
+library(readr)
+library(knitr)
+library(kableExtra)
+library("dplyr", warn.conflicts = F)
+library("BHH2")
+library("ggplot2")
+```
+
+
+
+
+```{r temblores1, echo = FALSE, message = FALSE}
+#Carga deCSV
+sismos <- read_csv("~/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/Sismos_Curado.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
+#cargo datos de sismos
+#data("sismos")
+#sismos$Magnitud
+```
+
+## Sobre la Base de datos
+El archivo de base de datos contiene sismos desde el 01/01/2003 hasta el 20/08/2015 y corresponde a la BD de sismologia.cl del Centro Sismológico Nacional de la Universidad de Chile y cuenta con 58193 registros. Obtenido a traves de WebScrapping como se muestra en esta web: <https://benjad.github.io/2015/08/21/base-de-datos-sismos-chile>.
+
+## Variables
+| VARIABLE            | TIPO                  | DESCRIPCIÓN                                                           |
+|---------------------|-----------------------|-----------------------------------------------------------------------|
+| Fecha Local         | Cuantitativa Nominal  | fecha horario de chile utc -3 o utc -4 según corresponde.             |
+| Hora Local          | Cuantitativa Nominal  | hora en horario de chile utc -3 o utc -4 según corresponde.           |
+| Fecha UTC           | Cuantitativa Nominal  | fecha y considerando el tiempo universal coordinado (UTC).            |
+| Hora UTC            | Cuantitativa Nominal  | hora en El tiempo universal coordinado (UTC).                         |
+| Latitud             | Cuantitativa Nominal  | Latitud geografica del sismo.                                         |
+| Longitud            | Cuantitativa Nominal  | Longitud geografica del sismo.                                        |
+| Profundidad(Km)     | Cuantitativa Discreta | Medida en Kilometros desde el epicentro hacia el centro de la tierra. |
+| Magnitud            | Cuantitativa Discreta | Cantidad otorgada por el sistema de medicion utilizado                |
+| Escala              | Cualitativa Nominal   | Tipo de medida utilizada (Mb, Mc, Ml, Ms, Mw)                         |
+| Lugar de Referencia | Cuantitativa Nominal  | Comuna o ciudad cercana al sismo                                      |
+
+## Preguntas Planteadas
+
+(P1) **¿A que profundidad se han generado mas sismos en Chile entre 2003 y 2015?**
+(P2) **¿Cuales son las magnitudes mas comunes de los sismos en Chile entre 2003 y 2015?**
+
+
+## Respuestas
+
+(R1) **¿A que profundidad se han generado mas sismos en Chile entre 2003 y 2015?**
+
+En la siguiente tabla de frecuencias podemos observar que la profundidad mas comun para los sismos en Chile entre 2003 y 2015 es entre los 0 y 50 Kilometros, Correspondiendo a un 53.7% de los eventos.
+
+```{r, echo = FALSE}
+## obtengo la tabla de frecuencia por magnitud de sismos
+tabla_freq=table.freq(hist(sismos$`Profundidad(Km)`, breaks = "Sturges", plot = FALSE))
+kable(tabla_freq) %>%
+kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+\newpage
+(R2) **¿Cuales son las magnitudes mas comunes de los sismos en Chile entre 2003 y 2015?**
+
+## Tabla de Frecuencia
+
+En la siguiente tabla de frecuencias podemos observar que los sismos mas comunes son entre los 3.0 y 3.5 grados Ritcher, siendo estos el 28% del total de los casos estudiados.
+
+```{r, echo = FALSE}
+## obtengo la tabla de frecuencia por magnitud de sismos
+tabla_freq=table.freq(hist(sismos$Magnitud, breaks = "Sturges", plot = FALSE))
+kable(tabla_freq) %>%
+kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+
+
+\newpage
+## Histograma
+
+Representacion grafica de la tabla de frecuencia.
+En el histograma podemos observar que la mayoria de los sismos se encuentran entre los 2.0 y 5.0 grados.
+
+```{r, echo = FALSE}
+#Generacion de Histograma por magnitud de sismos
+#Histograma 1
+#hist(1, sismos)
+grafico1 =ggplot(sismos,aes(Magnitud),  ) 
+grafico1 = grafico1 + geom_histogram(bins=50,fill="navajowhite",color="orange")
+grafico1 = grafico1 + theme_bw()
+grafico1 = grafico1 + ylab("Frecuencia absoluta") + xlab("Magnitudes en grados Ritcher (Ml)")
+grafico1 = grafico1 + ggtitle("Histograma de Sismos en Chile desde 2003 a 2015")
+plot(grafico1)
+##
+#hist(sismos$Magnitud, breaks = "Sturges")
+
+#summary(DesviacionEstandar=sd(sismos$Magnitud), Media=mean(sismos$Magnitud))
+#mean(sismos$Magnitud)
+#sd(sismos$Magnitud)
+#mode(sismos$Magnitud)
+#DesviacionEstandar=sd(sismos$Magnitud)
+#Media=mean(sismos$Magnitud)
+
+```
+
+## Definiciones
+
+**Escala Ml o de Richter**
+
+* Menos de 3.5: Generalmente no se siente, pero es registrado.
+
+* 3.5 - 5.4: A menudo se siente, pero sólo causa daños menores.
+
+* 5.5 - 6.0: Ocasiona daños ligeros a edificios.
+
+* 6.1 - 6.9: Puede ocasionar daños severos en áreas muy pobladas.
+
+* 7.0 - 7.9: Terremoto mayor. Causa graves daños.
+
+* 8 o mayor: Gran terremoto. Destrucción total a comunidades cercanas.
+
+
+\newpage
+
+# 4. Medidas de localización o centralidad
+
+```{r, revisar, echo = FALSE}
+#summary(DesviacionEstandar=sd(sismos$Magnitud), Media=mean(sismos$Magnitud))
+```
+
+**Media:**
+La media aritmetica de nuestra basede datos de registro de sismos, nos muestra el promedio de la intesidad de los sismos, su valor es el siguiente:
+
+```{r, echo = FALSE}
+## Media
+
+media = mean(sismos$Magnitud, 2)
+cat(paste("La media de intensidad de los sismos es :",(media),"grados"))
+## [1] "La media de intensidad de los sismos es aproximadamente: "
+```
+
+**Mediana:**
+La mediana que corresponde al valor central de toda nuestra muestra de sismos es:
+
+```{r, echo = FALSE}
+## MediaNA
+mediana = median(sismos$Magnitud, 2)
+cat(paste("La mediana de intensidad de los sismos es:",round(mediana),"grados"))
+## [1] "La de intensidad de los sismos es aproximadamente: 5xxx grados"
+```
+
+**Moda:**
+La moda es el caso que mas se repite, en nuestro estudio la intensidad de sismos que mas se ha repetido.
+```{r, echo = FALSE}
+tabla=table(sismos$Magnitud) #Crear tabla de frecuencia
+moda=names(tabla)[which.max(tabla)] #Buscar elemento más repetido
+moda=as.numeric(moda, 2) #Convertir a número
+
+cat (paste("La intensidad de sismos que más se repite (moda) es:", (moda), "grados, \n en" ,tabla[which.max(tabla)], "registros de sismos.\n"))
+## La edad de pacientes que más se repite (moda) es: 0 años,
+## con 808 pacientes atendidos
+```
+
+**Desviación Estandar:**
+La desviación estandar nos indica qué tan dispersos están los datos con respecto a la media, en nuestro caso su valor es:
+```{r, echo = FALSE}
+desvest=sd(sismos$Magnitud)
+cat(paste("Desviación Estandar:",(desvest),"."))
+```
+
+**Media en el Histograma:**
+
+La media en el histograma, se ubicaria de la siguiente manera:
+
+```{r, echo = FALSE}
+
+hist(sismos$Magnitud, # histograma
+ col = "peachpuff", # color
+ border = "black", 
+ prob = TRUE, # smuestra densidad
+ xlim = c(0,7.5),
+ ylim = c(0,0.65),
+ ylab = "Frecuencia Absoluta",
+ xlab = "Magnitudes en grados Ritcher (Ml)",
+ main = "Histograma de Sismos en Chile desde 2003 a 2015")
+
+abline(v = mean(sismos$Magnitud),
+ col = "royalblue",
+ lwd = 2)
+
+abline(v = median(sismos$Magnitud),
+ col = "red",
+ lwd = 2)
+
+legend(x = "topright", # leyenda
+ c("Media (3.2)", "Mediana (3.0)"),
+ col = c("royalblue", "red"),
+ lwd = c(2, 2))
+```
+
+
+## Sources
+
+Los fuentes y datos de este reporte los puede encontrar en el siguiente repositorio: [(https://github.com/oscarhenriquezg/Estadistica](https://github.com/oscarhenriquezg/Estadistica)

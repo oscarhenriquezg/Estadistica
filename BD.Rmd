@@ -1,11 +1,25 @@
 ---
 title: "Base de datos Banco Mundial - Chile"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+hola mundo
+
+
+```{r databm}
+library("kableExtra")
+library("agricolae")
+library("dplyr",warn.conflicts = F)
+library("ggplot2")
+datosBM <- read.csv("PIB-GINI-I+D.csv", header = TRUE, sep = ";")
+names(datosBM)
+
+```
+
 
 ## Sobre la Base de Datos
 
@@ -53,23 +67,26 @@ SUECIA        | 1961
 SUIZA         | 1961
 TURQUÍA       | 1961
 
-Algunos de los campos conn los que cuenta la BD son los sigueintes:
+Los indicadores en los ue nos enfocaremos son  conn los que cuenta la BD son los sigueintes:
 
-```
-Deuda del gobierno central, total (% del PIB)
-Deuda del gobierno central, total (UMN a precios actuales)
-Adquisición neta de activos financieros (% del PIB)
-Adquisición neta de activos financieros (UMN actual)
-Gasto en investigación y desarrollo (% del PIB)
-.
-.
-.
-```
-En el archivo: Metadata_Indicator_API_Download_DS2_es_csv_v2_1035831.csv se encuentran todas las areas que existe informacion historica, su descripcion y el tipo de medida utilizada.
+
+NY.GDP.MKTP.KD.ZG
+Tasa de crecimiento anual porcentual del PIB a precios de mercado en moneda local, a precios constantes. Los agregados están expresados en dólares de los Estados Unidos a precios constantes del año 2010. El PIB es la suma del valor agregado bruto de todos los productores residentes en la economía más todo impuesto a los productos, menos todo subsidio no incluido en el valor de los productos. Se calcula sin hacer deducciones por depreciación de bienes manufacturados o por agotamiento y degradación de recursos naturales.
+
+
+SI.POV.GINI
+El índice de Gini mide hasta qué punto la distribución del ingreso (o, en algunos casos, el gasto de consumo) entre individuos u hogares dentro de una economía se aleja de una distribución perfectamente equitativa. Una curva de Lorenz muestra los porcentajes acumulados de ingreso recibido total contra la cantidad acumulada de receptores, empezando a partir de la persona o el hogar más pobre. El índice de Gini mide la superficie entre la curva de Lorenz y una línea hipotética de equidad absoluta, expresada como porcentaje de la superficie máxima debajo de la línea. Así, un índice de Gini de 0 representa una equidad perfecta, mientras que un índice de 100 representa una inequidad perfecta.
+
+
+GB.XPD.RSDV.GD.ZS
+Los gastos en investigación y desarrollo son gastos corrientes y de capital (público y privado) en trabajo creativo realizado sistemáticamente para incrementar los conocimientos, incluso los conocimientos sobre la humanidad, la cultura y la sociedad, y el uso de los conocimientos para nuevas aplicaciones. El área de investigación y desarrollo abarca la investigación básica, la investigación aplicada y el desarrollo experimental.
+
+
+En el archivo: Metadata_Indicator_API_Download_DS2_es_csv_v2_1035831.csv se encuentran todas las areas que existe, su descripción y el tipo de medida utilizada.
 
 ## Preguntas
 * ¿Cual es la evolucion del PIB de los paises OCDE con respecto a Chile?
-* ¿Cual es la inversion en I+D de los paises OCDE con respecto a Chile?
-* ¿Cual es el crecimiento del desarrollo Tecnologico de los paises OCDE con respecto a Chile?
+* ¿Cual es el indice GINI de los paises OCDE con respecto a Chile?
+* ¿Cual es el gasto de I+D de los paises OCDE con respecto a Chile?
 
-AL tener muchas variables esta BD pueden realizarse muchas preguntas acerca de la misma 
+

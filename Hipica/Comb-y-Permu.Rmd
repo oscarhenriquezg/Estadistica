@@ -1,0 +1,163 @@
+---
+title: "Combinaciones, Arreglos y Permutaciones en la Hípica"
+author: "Oscar Henríquez G."
+date: "9/8/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#{r setup, include=FALSE}
+# Setup
+knitr::opts_knit$set(root.dir = "/Users/oscarhenriquezg/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/Hipica")
+
+# Libreríasçç
+library(Rarity)
+library(gtools)
+library(agricolae)
+library(readr)
+library(knitr)
+library(kableExtra)
+library("dplyr", warn.conflicts = F)
+library("BHH2")
+library("ggplot2")
+
+
+```
+
+## Introducción
+
+En el siguiente trabajo realizamos un estudio de las combinaciones, arreglos y permutaciones presentes dentro del mundo de las apuestas en la Hípica Chilena, actualmente existen varios varios tipos de apuestas, en este trabajo nos enfocaremos en las siguientes tres:
+
+1) **La Quinela**: Acertar a los caballos que en una misma carrera ocupen los dos primeros lugares, en cualquier orden.(Una Combinación en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
+
+2) **La Trifecta**: Acertar a los caballos que lleguen en 1er, 2do y 3er lugar en orden exacto. (Un Arreglo en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
+
+Fuente: <https://www.teletrak.cl/como_jugar.php>.
+
+3) **La SuperUltraPerfecta**: Para efectos didacticos de este trabajo hemos inventado un nuevo tipo de apuesta que llamamos SuperUltraPerfecta, donde debes acertar al orden de llegada exacto de todos los caballos que corren la carrera. (Una Permutación en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
+
+## Conjunto de Datos
+
+Consideraremos en nuestro estudio datos reales de la Reunión Nº 28 del Club Hipico de santiago, en la carrera Nª 1 a celebrarse el Viernes 11 de Septiembre de 2020 a las 12:00 PM. Aprox. Donde participarán los ejemplares:
+
+
+| NUMERO | EJEMPLAR                     |
+|--------|------------------------------|
+|    1   |            TOLTEPEC          |
+|    2   |            PARTICOLARE       |
+|    3   |            GRAN BILBAO       |
+|    4   |             MI LUCERO        |
+|    5   |         SCARLET PIMPERNEL    |
+|    6   |             RADIO TOUR       |
+|    7   |          PATRIOTA JAVIERA    |
+|    8   |            LIKE COMPANY      |
+|    9   |              SALIERI         |
+|   10   |             OJOS ROJOS       |
+|   11   |               LEZARD         |
+|   12   |           MASTER FRIEND      |
+|   13   |            NEKO HARBOUR      |
+|   14   |              TIA PATY        |
+|   15   |              TAL VEZ         |
+Fuente: https://www.clubhipico.cl/programa-carreras/programa-completo
+
+Definimos nuestro conjunto de datos en R, que luego vamos a operar.
+```{r caballos}
+#Definicion de ejemplares que participaran de la carrera
+ejemplares=c("TOLTEPEC","PARTICOLARE","GRAN BILBAO","MI LUCERO","SCARLET PIMPERNEL",
+             "RADIO TOUR","PATRIOTA JAVIERA","LIKE COMPANY","SALIERI","OJOS ROJOS",
+             "LEZARD","MASTER FRIEND","NEKO HARBOUR","TIA PATY","TAL VEZ")
+```
+
+## Combinaciones
+
+En el caso de querer apostar una Quinela ganadora, realizando todas las combinaciones posibles, el cálculo que deberiamos realizar es el siguiente:
+
+```{r combi}
+#Calculando la formula de las combinaciones
+n=2
+N=15
+quinelas=factorial(N)/(factorial(n)*factorial(N-n))
+quinelas
+```
+
+
+Para acertar a la combinacion de Primer y Segundo lugar en cualquier orden, la cantidad de apuestas **quinelas** a realizar es de: **105** a un costo minimo de 200CLP cada una tendríamos que invertir un total de 21.000CLP. 
+
+Las primeras 30 combinaciones posibles de parejas de ganadores de primer y segundo lugar las podriamos obtener de la siguiente manera:
+
+```{r combi2}
+library(gtools)
+n=2
+N=15
+quinelas=combinations(N,n, ejemplares)
+numero=nrow(quinelas)
+print(numero) 
+head(quinelas,30) #Mostramos solo las primeras 30 combinaciones para no extender el documento.
+```
+
+## Permutaciones
+
+En el caso de querer apostar una SuperUltraPerfecta ganadora, realizando todas las *permutaciones* posibles, el cálculo que deberiamos realizar es el siguiente:
+
+*Consideramos este caso una permutacion ya que nuestro n es igual que N.*
+
+```{r permu}
+n=15
+N=15
+SuperUltraPerfectas=factorial(N)/(factorial(N-n))
+SuperUltraPerfectas
+#SuperUltraPerfectas *200
+```
+
+Para acertar a la permutación del 1ª al 15ª lugar en un orden exacto, la cantidad de apuestas **SuperUltraPerfectas** a realizar es de: **1.307674e+12** a un costo mínimo de CLP200 cada una nos da un total de 2.615349e+14CLP, lo que es una cifra muy grande e imposible de apostar.
+
+Las primeras 5 permutaciones posibles considerando solo 5 ejemplares, las podriamos obtener de la siguiente manera:
+
+*(Tomamos solo una pequeña parte de las permutaciones posibles, para no exigir la CPU ni alargar el documento innecesariamnte)*
+```{r permu2}
+#Calculasmos solo las primeras 5 permutacioens para no quemar la CPU
+n=5 
+N=5
+SuperUltraPerfectas=permutations(N,n, ejemplares)
+numero=nrow(SuperUltraPerfectas)
+print(numero) 
+#Mostramos solo las primeras 5 permutacioens para no extender el documento.
+head(SuperUltraPerfectas,5) 
+```
+
+
+## Arreglos
+
+En el caso de querer apostar una Trifecta ganadora, realizando todos los *arreglos* posibles, el cálculo que deberiamos realizar es el siguiente:
+
+*Consideramos este caso un arreglo ya que nuestro n es menor que N.*
+
+```{r arre}
+n=3
+N=15
+trifectas=factorial(N)/(factorial(N-n))
+trifectas
+
+```
+
+Para acertar al arreglo de Primer, Segundo y Tercer lugar en un orden exacto, la cantidad de apuestas **Trifectas** a realizar es de: **2730** a un costo minimo de CLP200 cada una nos da un total de 546.000CLP
+
+Las primeras 30 arreglos posibles de Primer, Segundo y Tercer lugar en un orden exacto, las podriamos obtener de la siguiente manera:
+
+```{r arre2}
+library(gtools)
+n=3
+N=15
+trifectas=combinations(N,n, ejemplares)
+numero=nrow(quinelas)
+print(numero) 
+head(trifectas,30) #Mostramos solo las primeras 30 combinaciones para no extender el documento.
+```
+
+
+## Sources
+Los fuentes y datos de este reporte los puede encontrar en el siguiente repositorio: [(https://github.com/oscarhenriquezg/Estadistica/Hipica](https://github.com/oscarhenriquezg/Estadistica/Hipica)
+
+
