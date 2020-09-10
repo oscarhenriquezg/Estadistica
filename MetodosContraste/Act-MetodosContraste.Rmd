@@ -21,6 +21,8 @@ library(kableExtra)
 library("dplyr", warn.conflicts = F)
 library("BHH2")
 library("ggplot2")
+library("nortest")
+#library(olsrr)
 ```
 
 
@@ -28,7 +30,7 @@ library("ggplot2")
 
 ```{r temblores1, echo = FALSE, message = FALSE}
 #Carga deCSV
-sismos <- read_csv("~/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/Sismos_Curado.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
+sismos <- read_csv("~/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/MetodosContraste/Sismos_4500.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
 #cargo datos de sismos
 #data("sismos")
 #sismos$Magnitud
@@ -208,6 +210,49 @@ legend(x = "topright", # leyenda
  col = c("royalblue", "red"),
  lwd = c(2, 2))
 ```
+
+## Metodos de Contraste (Estadistica Inferencial)
+## Hipotesis
+
+H0) Hipotesis Nula: Los sismos de menor profundidad tienen una mayor magnitud.
+
+H1) Hipotesis Complementaria: Los sismos de menor profundidad no siempre tienen una mayor magnitud.
+
+
+
+## Analisis de Normalidad
+**Ddddddfdfdfdf:**
+
+Los siguientes test me ayudan a determinar la normalidad de mis datos:
+```{r, echo = TRUE}
+shapiro.test(sismos$Magnitud)$p.value
+lillie.test(sismos$Magnitud)$p.value
+ad.test(sismos$Magnitud)$p.value
+cvm.test(sismos$Magnitud)$p.value
+pearson.test(sismos$Magnitud)$p.value
+sf.test(sismos$Magnitud)$p.value
+```
+
+De los 6 test aplicados 5 me arrojan valores menores a 0,05 y 1 me indica que no logra calcular un p value exactamente, entonces puedo asumir que mis datos no tienen una distribucion normal.
+
+## Analisis de Homogeneidad
+**Ddddddfdfdfdf:**
+Si existe homogeneidad entre mis 2 grupos utilizo test parametrico, sino no.
+
+El siguiente test me ayuda a determinar la Homogeneidad de mis datos
+Test de Bartlett:
+```{r, echo = FALSE}
+#prob=ols_test_bartlett(hsb, "read", group_var = "female")
+#prob=ols_test_bartlett(sismos$Magnitud) 
+#print(prob$pval)
+```
+
+El resultado del analisis me indica que mi varianza no es homogenea dentro de los grupos estudiados ya que su valor es mayor/menor 0,05
+
+## Conclusión de Analisis realizados
+
+Ya que mis datos NO cumplen una distribucion normal y su varianza tampoco es homogenea, debo utilizar estadistica NO paramétrica.
+
 
 
 ## Sources

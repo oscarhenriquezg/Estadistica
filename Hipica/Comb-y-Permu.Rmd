@@ -28,7 +28,7 @@ library("ggplot2")
 
 ## Introducción
 
-En el siguiente trabajo realizamos un estudio de las combinaciones, arreglos y permutaciones presentes dentro del mundo de las apuestas en la Hípica Chilena, actualmente existen varios varios tipos de apuestas, en este trabajo nos enfocaremos en las siguientes tres:
+En el siguiente trabajo realizamos un estudio de las combinaciones, arreglos y permutaciones presentes dentro del mundo de las apuestas en la Hípica Chilena, actualmente existen varios tipos de apuestas, en este trabajo nos enfocaremos en las siguientes tres:
 
 1) **La Quinela**: Acertar a los caballos que en una misma carrera ocupen los dos primeros lugares, en cualquier orden.(Una Combinación en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
 
@@ -36,11 +36,11 @@ En el siguiente trabajo realizamos un estudio de las combinaciones, arreglos y p
 
 Fuente: <https://www.teletrak.cl/como_jugar.php>.
 
-3) **La SuperUltraPerfecta**: Para efectos didacticos de este trabajo hemos inventado un nuevo tipo de apuesta que llamamos SuperUltraPerfecta, donde debes acertar al orden de llegada exacto de todos los caballos que corren la carrera. (Una Permutación en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
+3) **La SuperUltraPerfecta**: Para efectos didácticos de este trabajo hemos inventado un nuevo tipo de apuesta que llamamos SuperUltraPerfecta, donde debes acertar al orden de llegada exacto de todos los caballos que corren la carrera. (Una Permutación en nuestro caso de estudio). Costo mínimo de apuesta 200 Pesos.
 
 ## Conjunto de Datos
 
-Consideraremos en nuestro estudio datos reales de la Reunión Nº 28 del Club Hipico de santiago, en la carrera Nª 1 a celebrarse el Viernes 11 de Septiembre de 2020 a las 12:00 PM. Aprox. Donde participarán los ejemplares:
+Consideraremos en nuestro estudio datos reales de la Reunión Nº 28 del Club Hípico de santiago, en la carrera Nª 1 a celebrarse el viernes 11 de septiembre de 2020 a las 12:00 PM. Aprox. Donde participarán los ejemplares:
 
 
 | NUMERO | EJEMPLAR                     |
@@ -156,8 +156,17 @@ print(numero)
 head(trifectas,30) #Mostramos solo las primeras 30 combinaciones para no extender el documento.
 ```
 
+## Conclusiones
+
+En los casos estudiados, queda claro la importancia de diferenciar entre combinaciones, arreglos o permutaciones, ya que al realizar los cálculos nos damos cuenta que opciones son las más convenientes. En el caso de las apuestas, claramente siempre estarán diseñadas para que existan mayores ganancias para "la casa", pero realizando estos cálculos podemos determinar cuales son más ventajosas que otras o cuales son simplemente imposibles.
+
+También dentro de nuestro ámbito (la informática) es importante tener claridad de este tipo de cálculos para ejecuciones dentro de nuestros códigos, las permutaciones resultan especialmente costosas en recursos de CPU cuando tratamos con varios elementos.
+
 
 ## Sources
-Los fuentes y datos de este reporte los puede encontrar en el siguiente repositorio: [(https://github.com/oscarhenriquezg/Estadistica/Hipica](https://github.com/oscarhenriquezg/Estadistica/Hipica)
+
+Los fuentes y datos de este informe los puede encontrar en el siguiente repositorio:
+
+[https://github.com/oscarhenriquezg/Estadistica/tree/master/Hipica](https://github.com/oscarhenriquezg/Estadistica/tree/master/Hipica)
 
 

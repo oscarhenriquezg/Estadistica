@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 SEP 2020 23:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 SEP 2020 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -928,28 +928,22 @@ Package xcolor Warning: Incompatible color definition on input line 416.
 Package xcolor Warning: Incompatible color definition on input line 416.
 
 [4]
-Overfull \hbox (115.89084pt too wide) in paragraph at lines 455--458
-\T1/lmr/m/n/10 (-20) Los fuentes y datos de este re-porte los puede en-con-trar
- en el sigu-iente repos-i-to-rio: [](https://github.com/oscarhenriquezg/Estadis
-tica/Hipica[] 
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
 (./Comb-y-Permu.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
 Package rerunfilecheck Info: File `Comb-y-Permu.out' has not changed.
-(rerunfilecheck)             Checksum: C60D642399D8BC2364B7812FDD84357B;623.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+(rerunfilecheck)             Checksum: 50848BEB5172518FD77C0A2220E262F4;727.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 14417 strings out of 492649
- 209573 string characters out of 6129622
- 331519 words of memory out of 5000000
- 17996 multiletter control sequences out of 15000+600000
- 51285 words of font info for 78 fonts, out of 8000000 for 9000
+ 14429 strings out of 492649
+ 209705 string characters out of 6129622
+ 331554 words of memory out of 5000000
+ 17998 multiletter control sequences out of 15000+600000
+ 51617 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,38p,289b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -962,10 +956,10 @@ m/lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 al/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texm
 f-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Comb-y-Permu.pdf (5 pages, 232179 bytes).
+Output written on Comb-y-Permu.pdf (5 pages, 233619 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 12337 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
+ 12345 words of extra memory for PDF output out of 14400 (max. 10000000)
 
