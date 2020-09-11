@@ -22,7 +22,7 @@ library("dplyr", warn.conflicts = F)
 library("BHH2")
 library("ggplot2")
 library("nortest")
-#library(olsrr)
+library("olsrr", warn.conflicts = F)
 ```
 
 
@@ -211,26 +211,57 @@ legend(x = "topright", # leyenda
  lwd = c(2, 2))
 ```
 
-## Metodos de Contraste (Estadistica Inferencial)
-## Hipotesis
 
-H0) Hipotesis Nula: Los sismos de menor profundidad tienen una mayor magnitud.
 
-H1) Hipotesis Complementaria: Los sismos de menor profundidad no siempre tienen una mayor magnitud.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Métodos de Contraste (Estadística Inferencial)
+
+Desde este punto nuestro trabajo se enfocara en analisis estadisticos inferenciales, utilizando los anteriores analisis de estadistica descriptivo, como referencia para determinar que tipo de estadistica utilizaremos, parametrica o no parametrica.
+
+
+## Hipótesis
+
+Para realizar nuestros analisis, plantearemos una hipotesis nula (H0) y una hipótesis alternativa (H1)
+
+H0) Hipótesis Nula: Los sismos de menor profundidad tienen una mayor magnitud.
+
+H1) Hipótesis Complementaria: Los sismos de menor profundidad no tienen una mayor magnitud.
 
 
 ## Analisis de Normalidad
-**Ddddddfdfdfdf:**
+
+Para determinar si debo realizar un analisis estadistico parametrico o no parametrico, debo determinar si existe normalidad en mis datos.
 
 Los siguientes test me ayudan a determinar la normalidad de mis datos:
+
 ```{r, echo = TRUE}
 shapiro.test(sismos$Magnitud)$p.value
 lillie.test(sismos$Magnitud)$p.value
 ad.test(sismos$Magnitud)$p.value
-cvm.test(sismos$Magnitud)$p.value
 pearson.test(sismos$Magnitud)$p.value
 sf.test(sismos$Magnitud)$p.value
+cvm.test(sismos$Magnitud)$p.value
 ```
 
 De los 6 test aplicados 5 me arrojan valores menores a 0,05 y 1 me indica que no logra calcular un p value exactamente, entonces puedo asumir que mis datos no tienen una distribucion normal.
