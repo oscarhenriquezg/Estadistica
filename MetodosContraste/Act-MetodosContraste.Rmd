@@ -32,32 +32,29 @@ library("olsrr", warn.conflicts = F)
 #Carga deCSV
 sismos2003 <- read_csv("/Users/oscarhenriquezg/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/MetodosContraste/Sismos_2003.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
 #cargo datos de sismos
-#data("sismos")
-#sismos$Magnitud
+
 ```
 
 ```{r temblores2, echo = FALSE, message = FALSE}
 #Carga deCSV
 sismos2004 <- read_csv("~/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/MetodosContraste/Sismos_2004.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
 #cargo datos de sismos
-#data("sismos")
-#sismos$Magnitud
+
 ```
 
 ```{r temblores3, echo = FALSE, message = FALSE}
 #Carga deCSV
 sismosTotal<- read_csv("~/Documents/Estudios/USACH/Estadistica/GitHub/Estadistica/MetodosContraste/Sismos_Total.csv")[ ,c('Fecha Local', 'Hora Local', 'Fecha UTC', 'Hora UTC', 'Latitud', 'Longitud', 'Profundidad(Km)', 'Magnitud', 'Escala', 'Lugar de Referencia')]
 #cargo datos de sismos
-#data("sismos")
-#sismos$Magnitud
+
 ```
 
-## Sobre la Base de datos
-En este trabajo de metodos de contraste estadisticos hemos tomado informacion de sismos
+## Introducción
+En este trabajo de metodos de contraste estadisticos hemos tomado informacion de sismos ocurridos entre los años 2003 y 2004 en Chile, con el objeto de determinar si sus magnitudes van en aumento. Esto con fines didacticos para estudiar métodos de contraste en estadística.
 
 
 ## Sobre la Base de datos
-En este caso hemos tomado la base de datos y la hemos dividido en 2 años (2003 y 2004) para realizar nuestro estudio y contrastar los resultados obtenidos de ambos años de acuerdo a nuestra hipotesis.
+En este caso hemos tomado la base de datos y la hemos dividido en 2 años (2003 y 2004) para mayor comodidad en la creacion de Histogramas.
 
 El archivo de base de datos Sismos_2003.csv contiene sismos desde el 01/01/2003 hasta el 31/12/2003 con un total de 3980 registros.
 El archivo de base de datos Sismos_2004.csv contiene sismos desde el 01/01/2004 hasta el 31/12/2004 con un total de 3377 registros.
@@ -85,14 +82,12 @@ Todos los datos han diso obtenidos desde la BD de sismologia.cl del Centro Sismo
 
 Para realizar nuestros analisis, plantearemos una hipotesis nula (H0) y una hipótesis alternativa (H1):
 
-H0) Hipótesis Nula: Los sismos de menor profundidad tienen una mayor magnitud.
+H0) Hipótesis Nula: Los sismos en Chile aumentan cada año su magnitud.
 
-H1) Hipótesis Alternativa: Los sismos de menor profundidad no tienen una mayor magnitud.
-
-
+H1) Hipótesis Alternativa:  Los sismos en Chile NO aumentan cada año su magnitud.
 
 
-## Histograma
+## Histogramas
 
 Representacion grafica de la tabla de frecuencia.
 En el histograma podemos observar que la mayoria de los sismos se encuentran entre los 2.0 y 5.0 grados.
@@ -100,7 +95,6 @@ En el histograma podemos observar que la mayoria de los sismos se encuentran ent
 ```{r, echo = FALSE}
 #Generacion de Histograma por magnitud de sismos
 #Histograma 1
-#hist(1, sismos)
 grafico1 =ggplot(sismos2003,aes(Magnitud),  ) 
 grafico1 = grafico1 + geom_histogram(bins=50,fill="navajowhite",color="orange")
 grafico1 = grafico1 + theme_bw()
@@ -108,40 +102,25 @@ grafico1 = grafico1 + ylab("Frecuencia absoluta") + xlab("Magnitudes en grados R
 grafico1 = grafico1 + ggtitle("Histograma de Sismos en Chile en 2003")
 plot(grafico1)
 ##
-#hist(sismos$Magnitud, breaks = "Sturges")
 
-#summary(DesviacionEstandar=sd(sismos$Magnitud), Media=mean(sismos$Magnitud))
-#mean(sismos$Magnitud)
-#sd(sismos$Magnitud)
-#mode(sismos$Magnitud)
-#DesviacionEstandar=sd(sismos$Magnitud)
-#Media=mean(sismos$Magnitud)
 
 ```
 
-
+Representacion grafica de la tabla de frecuencia.
+En el histograma podemos observar que la mayoria de los sismos se encuentran entre los 2.0 y 4.0 grados.
 ```{r, echo = FALSE}
 #Generacion de Histograma por magnitud de sismos
-#Histograma 1
-#hist(1, sismos)
+
 grafico1 =ggplot(sismos2004,aes(Magnitud),  ) 
 grafico1 = grafico1 + geom_histogram(bins=50,fill="lightskyblue1",color="midnightblue")
 grafico1 = grafico1 + theme_bw()
 grafico1 = grafico1 + ylab("Frecuencia absoluta") + xlab("Magnitudes en grados Ritcher (Ml)")
 grafico1 = grafico1 + ggtitle("Histograma de Sismos en Chile en 2004")
 plot(grafico1)
-##
-#hist(sismos$Magnitud, breaks = "Sturges")
-
-#summary(DesviacionEstandar=sd(sismos$Magnitud), Media=mean(sismos$Magnitud))
-#mean(sismos$Magnitud)
-#sd(sismos$Magnitud)
-#mode(sismos$Magnitud)
-#DesviacionEstandar=sd(sismos$Magnitud)
-#Media=mean(sismos$Magnitud)
 
 ```
-## Definiciones
+
+##Definiciones
 
 **Escala Ml o de Richter**
 
@@ -159,12 +138,9 @@ plot(grafico1)
 
 
 
-
 # 4. Medidas de localización o centralidad
 
-```{r, revisar, echo = FALSE}
-#summary(DesviacionEstandar=sd(sismos$Magnitud), Media=mean(sismos$Magnitud))
-```
+Las siguientes medidas de centralidad se calculan tomando el conjunto de datos completos de los años 2003 y 2004 de sismos registrados en Chile.
 
 **Media:**
 La media aritmetica de nuestra basede datos de registro de sismos, nos muestra el promedio de la intesidad de los sismos, su valor es el siguiente:
@@ -174,7 +150,7 @@ La media aritmetica de nuestra basede datos de registro de sismos, nos muestra e
 
 media = mean(sismosTotal$Magnitud, 2)
 cat(paste("La media de intensidad de los sismos es :",(media),"grados"))
-## [1] "La media de intensidad de los sismos es aproximadamente: "
+
 ```
 
 **Mediana:**
@@ -184,7 +160,7 @@ La mediana que corresponde al valor central de toda nuestra muestra de sismos es
 ## MediaNA
 mediana = median(sismosTotal$Magnitud, 2)
 cat(paste("La mediana de intensidad de los sismos es:",round(mediana),"grados"))
-## [1] "La de intensidad de los sismos es aproximadamente: 5xxx grados"
+
 ```
 
 **Moda:**
@@ -195,8 +171,7 @@ moda=names(tabla)[which.max(tabla)] #Buscar elemento más repetido
 moda=as.numeric(moda, 2) #Convertir a número
 
 cat (paste("La intensidad de sismos que más se repite (moda) es:", (moda), "grados, \n en" ,tabla[which.max(tabla)], "registros de sismos.\n"))
-## La edad de pacientes que más se repite (moda) es: 0 años,
-## con 808 pacientes atendidos
+
 ```
 
 **Desviación Estandar:**
@@ -207,16 +182,18 @@ cat(paste("Desviación Estandar:",(desvest),"."))
 ```
 
 
+# Estadística Inferencial
 
-
-# (Estadística Inferencial)
-
-Desde este punto nuestro trabajo se enfocara en análisis estadisticos inferenciales, utilizando los anteriores análisis de estadística descriptiva, como referencia para determinar que tipo de estadística utilizaremos, paramétrica o no paramétrica.
+Desde este punto nuestro trabajo se enfocara en análisis estadisticos inferenciales, utilizando los anteriores análisis de estadística descriptiva como referencia para determinar que tipo de estadística utilizaremos en nuestro hipótesis a estudiar, paramétrica o no paramétrica.
 
 
 ## Analisis de Normalidad
 
 Para determinar si debo realizar un analisis estadistico parametrico o no parametrico, debo determinar si existe normalidad en mis datos.
+
+#H0: Los datos se distribuyen de forma normal
+#H1: Los datos no se distribuyen de forma normal
+
 
 Los siguientes test me ayudan a determinar la normalidad de mis datos:
 
@@ -232,32 +209,57 @@ cvm.test(sismosTotal$Magnitud)$p.value
 #sf.test(sismosTotal$Magnitud)$p.value
 ```
 
-De los 4 test aplicados 3 me arrojan valores menores a 0,05 y 1 (Test CVM) me indica que no logra calcular un p value exactamente, entonces se tiene seguridad de que no existe distribucion normal en los datos ya que los P VALUE obtenidos son menores a 0.05.
+De los 4 test aplicados 3 me arrojan valores menores a 0,05 y 1 (Test CVM) me indica que no logra calcular un p value exactamente, a pesar de esto, con los resultados obtenidos podriamos decir que se tiene seguridad de que no existe distribucion normal en los datos ya que los P VALUE obtenidos son menores a 0.05.
 
-Los test de Saphiro t SF no se pudieron aplicar ya que la muestra tiene mas de 5000 registros.
+*Los test de Saphiro y SF no se pudieron aplicar ya que la muestra tiene mas de 5000 registros.
 
 ## Análisis de la homogeneidad de varianza
-**Ddddddfdfdfdf:**
-Si existe homogeneidad entre mis 2 grupos utilizo test parametrico, sino no.
 
 El siguiente test me ayuda a determinar la Homogeneidad de mis datos
+Prueba de homogenediad de varianza con Bartlett
+H0: Varianza es homogenea
+H1: Variancia no es homogenea
+Si existe homogeneidad entre mis 2 grupos utilizo test paramétrico, sino no.
 
 Análisis de la homogeneidad de varianza
-Test de Bartlett:
-#```{r, echo = FALSE}
-#prob=ols_test_bartlett(hsb, "read", group_var = "female")
-#prob=ols_test_bartlett(sismos$Magnitud) 
-#print(prob$pval)
-#```
 
-El resultado del analisis me indica que mi varianza no es homogenea dentro de los grupos estudiados ya que su valor es mayor/menor 0,05
+```{r varianza, message=TRUE}
 
-## Conclusión de Analisis realizados
+bartlett.test(sismosTotal$Magnitud,
+              substring(sismosTotal$`Fecha Local`,7,8),
+              data=sismosTotal)
 
-Ya que mis datos NO cumplen una distribucion normal y su varianza tampoco es homogenea, debo utilizar estadistica NO paramétrica.
+#Aplico Substring para distinguier entre 03 y 04 el año
+#substring(sismosTotal$`Fecha Local`,7,8) 
+
+```
+
+El resultado del análisis me indica que mi varianza no es homogenea dentro de los grupos estudiados ya que su P VALUE es menor a 0,05.
+
+## Conclusiones Preeliminares de Análisis realizados
+
+Ya que mis datos NO cumplen una distribucion normal y su varianza tampoco es homogenea, debo utilizar estadística NO paramétrica.
+Y dado que los datos analizados corresponden a un grupo relacionado (tomando a Chile como sujeto) ya que todas las mediciones son realizadas en territorio nacional, determinamos que el test a realizar más apropiado es Wilcoxon.
 
 
+```{r wilco.test}
+
+wilcox.test(sismosTotal$Magnitud ~  substring(sismosTotal$`Fecha Local`,7,8),
+            data = sismosTotal, paired= F)
+
+
+```
+
+
+## Conclusiones
+
+
+De acuerdo a los analisis realizados y considerando que el P VALUE de nuestro test de Wilcoxon es menor que 0.05 podemos indicar que nuestra hipotesis alternativa esta en lo crrecto y esta nos indica que:
+
+**H1) Hipótesis Alternativa:  Los sismos en Chile NO aumentan cada año su magnitud.**
 
 ## Sources
 
-Los fuentes y datos de este reporte los puede encontrar en el siguiente repositorio: [https://github.com/oscarhenriquezg/Estadistica/tree/master/MetodosContraste](https://github.com/oscarhenriquezg/Estadistica/tree/master/MetodosContraste)
+Los fuentes y datos de este reporte los puede encontrar en el siguiente repositorio:
+
+[https://github.com/oscarhenriquezg/Estadistica/tree/master/MetodosContraste](https://github.com/oscarhenriquezg/Estadistica/tree/master/MetodosContraste)
