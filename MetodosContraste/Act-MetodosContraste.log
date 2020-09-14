@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 SEP 2020 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 SEP 2020 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -810,138 +810,146 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 146.
+(Font)              <12> on input line 158.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 146.
+(Font)              <8> on input line 158.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 146.
+(Font)              <6> on input line 158.
 
-Overfull \hbox (10.17873pt too wide) in paragraph at lines 205--206
+Overfull \hbox (10.17873pt too wide) in paragraph at lines 217--218
 []\T1/lmr/m/n/12 (-20) Profundidad(Km)|  
  []
 
 [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<Act-MetodosContraste_files/figure-latex/unnamed-chunk-3-1.pdf, id=83, 469.755p
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<Act-MetodosContraste_files/figure-latex/unnamed-chunk-1-1.pdf, id=56, 469.755p
 t x 325.215pt>
-File: Act-MetodosContraste_files/figure-latex/unnamed-chunk-3-1.pdf Graphic fil
+File: Act-MetodosContraste_files/figure-latex/unnamed-chunk-1-1.pdf Graphic fil
 e (type pdf)
-<use Act-MetodosContraste_files/figure-latex/unnamed-chunk-3-1.pdf>
+<use Act-MetodosContraste_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: Act-MetodosContraste_files/figure-latex/unnamed-chunk-
-3-1.pdf  used on input line 340.
+1-1.pdf  used on input line 267.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 349.
+[2]
+<Act-MetodosContraste_files/figure-latex/unnamed-chunk-2-1.pdf, id=63, 469.755p
+t x 325.215pt>
+File: Act-MetodosContraste_files/figure-latex/unnamed-chunk-2-1.pdf Graphic fil
+e (type pdf)
+<use Act-MetodosContraste_files/figure-latex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: Act-MetodosContraste_files/figure-latex/unnamed-chunk-
+2-1.pdf  used on input line 269.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+[][]
+ []
+
+[3 <./Act-MetodosContraste_files/figure-latex/unnamed-chunk-1-1.pdf>]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 276.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4 <./Act-MetodosContraste_files/figure-latex/unnamed-chunk-3-1.pdf>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 370.
+)
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 297.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-<Act-MetodosContraste_files/figure-latex/unnamed-chunk-8-1.pdf, id=97, 469.755p
-t x 325.215pt>
-File: Act-MetodosContraste_files/figure-latex/unnamed-chunk-8-1.pdf Graphic fil
-e (type pdf)
-<use Act-MetodosContraste_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Act-MetodosContraste_files/figure-latex/unnamed-chunk-
-8-1.pdf  used on input line 401.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[5 <./Act-MetodosContraste_files/figure-latex/unnamed-chunk-8-1.pdf>]
+) [4 <./Act-MetodosContraste_files/figure-latex/unnamed-chunk-2-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 432.
+Package xcolor Warning: Incompatible color definition on input line 340.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 434.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 342.
 
-Package xcolor Warning: Incompatible color definition on input line 436.
-
-
-Package xcolor Warning: Incompatible color definition on input line 436.
+Package xcolor Warning: Incompatible color definition on input line 344.
 
 
-Package xcolor Warning: Incompatible color definition on input line 442.
+Package xcolor Warning: Incompatible color definition on input line 344.
 
 
-Package xcolor Warning: Incompatible color definition on input line 446.
+Package xcolor Warning: Incompatible color definition on input line 350.
 
 
-Package xcolor Warning: Incompatible color definition on input line 446.
+Package xcolor Warning: Incompatible color definition on input line 354.
 
 
-Package xcolor Warning: Incompatible color definition on input line 452.
+Package xcolor Warning: Incompatible color definition on input line 354.
 
 
-Package xcolor Warning: Incompatible color definition on input line 456.
+Package xcolor Warning: Incompatible color definition on input line 360.
 
 
-Package xcolor Warning: Incompatible color definition on input line 456.
+Package xcolor Warning: Incompatible color definition on input line 364.
 
 
-Package xcolor Warning: Incompatible color definition on input line 462.
+Package xcolor Warning: Incompatible color definition on input line 364.
 
 
-Package xcolor Warning: Incompatible color definition on input line 466.
+Package xcolor Warning: Incompatible color definition on input line 370.
 
 
-Package xcolor Warning: Incompatible color definition on input line 466.
+Package xcolor Warning: Incompatible color definition on input line 374.
 
 
-Package xcolor Warning: Incompatible color definition on input line 472.
+Package xcolor Warning: Incompatible color definition on input line 374.
 
 
-Package xcolor Warning: Incompatible color definition on input line 476.
-
-
-Package xcolor Warning: Incompatible color definition on input line 476.
-
-
-Package xcolor Warning: Incompatible color definition on input line 482.
-
-
-Package xcolor Warning: Incompatible color definition on input line 486.
-
-
-Package xcolor Warning: Incompatible color definition on input line 486.
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 491--491
-[]\T1/lmtt/m/n/12 ## Warning in cvm.test(sismos$Magnitud): p-value is smaller t
-han 7.37e-10, cannot[] 
+Overfull \hbox (18.07022pt too wide) in paragraph at lines 379--379
+[]\T1/lmtt/m/n/12 ## Warning in cvm.test(sismosTotal$Magnitud): p-value is smal
+ler than 7.37e-10,[] 
  []
 
+
+Package xcolor Warning: Incompatible color definition on input line 385.
+
+
+Package xcolor Warning: Incompatible color definition on input line 391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 391.
+
+[5]
+Underfull \hbox (badness 1348) in paragraph at lines 410--412
+[]\T1/lmr/m/n/12 (+20) Análisis de la ho-mo-genei-dad de var-i-anza Test de Bar
+tlett: #\T1/lmtt/m/n/12 {r, echo = FALSE}
+ []
+
+
+Overfull \hbox (141.57028pt too wide) in paragraph at lines 410--412
+\T1/lmtt/m/n/12 #prob=ols_test_bartlett(hsb, "read", group_var = "female") #pro
+b=ols_test_bartlett(sismos$Magnitud)
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
 [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 527.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 527.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
 (./Act-MetodosContraste.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 527.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 527.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 430.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
 Package rerunfilecheck Info: File `Act-MetodosContraste.out' has not changed.
-(rerunfilecheck)             Checksum: 9FA205C5CC79E7164806690A104E4713;2191.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 527.
+(rerunfilecheck)             Checksum: 5CC46DB4ECC79CF1A273EB2F22F9DDDD;1643.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
  ) 
 Here is how much of TeX's memory you used:
- 14757 strings out of 492649
- 214474 string characters out of 6129622
- 341040 words of memory out of 5000000
- 18323 multiletter control sequences out of 15000+600000
- 53120 words of font info for 80 fonts, out of 8000000 for 9000
+ 14742 strings out of 492649
+ 214272 string characters out of 6129622
+ 342022 words of memory out of 5000000
+ 18316 multiletter control sequences out of 15000+600000
+ 53439 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,9n,38p,914b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,38p,914b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/lm/lmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm
 /lmtk10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt12.pf
-b>
-Output written on Act-MetodosContraste.pdf (7 pages, 157841 bytes).
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Act-MetodosContraste.pdf (6 pages, 170547 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 10363 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 10331 words of extra memory for PDF output out of 12000 (max. 10000000)
 
